@@ -96,31 +96,32 @@ export default class Sidebar extends PureComponent {
 
 					<div class={style.content}>{children}</div>
 
-					<MenuItem
-						icon="envelope"
-						class={style.navMenuItem}
-						href="/"
-						match={`/${slugs.email}/`}
-					>
-						Mail
-					</MenuItem>
-					<MenuItem
-						icon="address-book"
-						class={style.navMenuItem}
-						href={`/${slugs.contacts}`}
-						match={`/${slugs.contacts}/`}
-					>
-						Contacts
-					</MenuItem>
-					<MenuItem
-						icon="calendar-o"
-						iconText={new Date().getDate()}
-						class={style.navMenuItem}
-						href={`/${slugs.calendar}`}
-						match={`/${slugs.calendar}/`}
-					>
-						Calendar
-					</MenuItem>
+					{modal ? <div>
+						<MenuItem
+							icon="envelope"
+							class={style.navMenuItem}
+							href="/"
+							match={`/${slugs.email}/`}
+						>
+							Mail
+						</MenuItem>
+						<MenuItem
+							icon="address-book"
+							class={style.navMenuItem}
+							href={`/${slugs.contacts}`}
+							match={`/${slugs.contacts}/`}
+						>
+							Contacts
+						</MenuItem>
+						<MenuItem
+							icon="calendar-o"
+							iconText={new Date().getDate()}
+							class={style.navMenuItem}
+							href={`/${slugs.calendar}`}
+							match={`/${slugs.calendar}/`}
+						>
+							Calendar
+						</MenuItem></div> : ''}
 
 				</div>
 			</div>
