@@ -6,6 +6,9 @@ import { empty } from '../../lib/util';
 import { screenSmMax } from '../../constants/breakpoints';
 import get from 'lodash-es/get';
 import cx from 'classnames';
+import MenuItem from '../menu-item';
+import { configure } from '../../config';
+
 import preactRedux from 'preact-redux';
 import { bindActionCreators } from 'redux';
 import * as sidebarActionCreators from '../../store/sidebar/actions';
@@ -25,6 +28,7 @@ import ClientLogo from '../client-logo';
 	}),
 	(dispatch) => bindActionCreators(sidebarActionCreators, dispatch)
 )
+@configure('routes.slugs')
 export default class Sidebar extends PureComponent {
 	state = {
 		width: window.innerWidth
@@ -54,6 +58,7 @@ export default class Sidebar extends PureComponent {
 			modal,
 			show,
 			hide,
+			slugs,
 			...props
 		},
 		{ width }
@@ -90,6 +95,33 @@ export default class Sidebar extends PureComponent {
 					{!empty(footer) ? footer : null}
 
 					<div class={style.content}>{children}</div>
+
+					<MenuItem
+						icon="envelope"
+						class={style.navMenuItem}
+						href="/"
+						match={`/${slugs.email}/`}
+					>
+						Mail
+					</MenuItem>
+					<MenuItem
+						icon="address-book"
+						class={style.navMenuItem}
+						href={`/${slugs.contacts}`}
+						match={`/${slugs.contacts}/`}
+					>
+						Contacts
+					</MenuItem>
+					<MenuItem
+						icon="calendar-o"
+						iconText={new Date().getDate()}
+						class={style.navMenuItem}
+						href={`/${slugs.calendar}`}
+						match={`/${slugs.calendar}/`}
+					>
+						Calendar
+					</MenuItem>
+
 				</div>
 			</div>
 		);
