@@ -9,12 +9,12 @@ jobs:
     working_directory: ~/repo
 
     steps:
-      - sudo apt-get update && sudo apt-get install wmctrl fluxbox x11-apps
-      - sudo /usr/bin/killall Xvfb
-      - sudo /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_1.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -screen 0 4000x1800x24
-      - fluxbox > /dev/null 2>&1:
-          background: true
-      -  ./screenshotExample.sh
+      - run: sudo apt-get update && sudo apt-get install wmctrl fluxbox x11-apps
+      - run: sudo /usr/bin/killall Xvfb
+      - run: sudo /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_1.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -screen 0 4000x1800x24
+      - run: fluxbox > /dev/null 2>&1:
+             background: true
+      - run: ./screenshotExample.sh
       - checkout
       - run: sudo apt-get install fluxbox
       - run: sudo systemctl restart lightdm.service
