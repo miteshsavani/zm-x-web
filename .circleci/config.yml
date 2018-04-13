@@ -11,6 +11,7 @@ jobs:
     steps:
       - checkout
       - run: sudo apt-get install fluxbox
+      - run: sudo /etc/init.d/gdm restart
 
       # Download and cache dependencies
       - restore_cache:
