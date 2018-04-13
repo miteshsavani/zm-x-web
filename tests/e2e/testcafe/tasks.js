@@ -12,6 +12,7 @@ fixture `Tasks fixture`
 		t.ctx.user = await soap.createAccount(t.fixtureCtx.adminAuthToken);
 		t.ctx.userAuth = await soap.getUserAuthToken(t.ctx.user.email, t.ctx.user.password);
 		await t.maximizeWindow();
+	        console.log(await t.getBrowserConsoleMessages());
 		await actions.loginEmailPage(t.ctx.user.email, t.ctx.user.password);
 		await actions.clickNavBarMenuItem('Calendar');
 	})
