@@ -18,7 +18,7 @@
     "postinstall": "npm run -s packages:install",
     "serve": "node ./scripts/superstatic-https.js",
     "start": "node ./scripts/start.js",
-    "test": "HTML_REPORT_PATH='test-reports/testcafe-smoke/' testcafe -c 5 chrome tests/e2e/testcafe/ -e -q --app 'npm run serve' --app-init-delay 5000 -T \"Smoke\" -r html-testrail,xunit:test-reports/testcafe-smoke/xunit.xml",
+    "test": "HTML_REPORT_PATH='test-reports/testcafe-smoke/' testcafe -c 5 chrome tests/e2e/testcafe/ -e -q --app 'npm run serve' --app-init-delay 5000 -T \"Smoke\" -S -s test-reports/testcafe-smoke -r html-testrail,xunit:test-reports/testcafe-smoke/xunit.xml",
     "test:no-synacor-npm-refs": "node ./scripts/synacor-npm-refs.js"
   },
   "keywords": [
