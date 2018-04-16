@@ -17,8 +17,11 @@
     "packages:install": "node node_modules/recursive-install --skip-root",
     "postinstall": "npm run -s packages:install",
     "serve": "node ./scripts/superstatic-https.js",
+    "test": "npm run lint && npm run test:unit && npm run test:no-synacor-npm-refs && npm run build && npm run test:e2e:smoke",
+    "test:unit": "karma start tests/karma.conf.js --single-run",
+    "test:watch": "JUNIT=false COVERAGE=false npm run test:unit -- --no-single-run",
     "start": "node ./scripts/start.js",
-    "test": "HTML_REPORT_PATH='test-reports/testcafe-smoke/' testcafe -c 5 chrome tests/e2e/testcafe/ -e -q --app 'npm run serve' --app-init-delay 5000 -T \"Smoke\" -S -s test-reports/testcafe-smoke -r html-testrail,xunit:test-reports/testcafe-smoke/xunit.xml",
+    "test:e2e:smoke": "HTML_REPORT_PATH='test-reports/testcafe-smoke/' testcafe -c 5 chrome tests/e2e/testcafe/ -e -q --app 'npm run serve' --app-init-delay 5000 -T \"Smoke\" -S -s test-reports/testcafe-smoke -r html-testrail,xunit:test-reports/testcafe-smoke/xunit.xml",
     "test:no-synacor-npm-refs": "node ./scripts/synacor-npm-refs.js"
   },
   "keywords": [
