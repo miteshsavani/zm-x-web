@@ -28,11 +28,7 @@ jobs:
       - run: npm test
 
       - store_test_results:
-          path: 
-            - test-reports
-            - screenshots
+          path: screenshots
 
       - store_artifacts:
-          path: 
-            - test-reports
-            - screenshots
+          path: screenshots
