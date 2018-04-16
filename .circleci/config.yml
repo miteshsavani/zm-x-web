@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: x11docker/fluxbox
+      - image: circleci/node:8-browsers
         environment:
           CHROME_BIN: "/usr/bin/google-chrome"
 
@@ -10,7 +10,6 @@ jobs:
 
     steps:
       - checkout
-      - run: sudo apt-get install -y nodejs
 
       # Download and cache dependencies
       - restore_cache:
@@ -33,4 +32,3 @@ jobs:
 
       - store_artifacts:
           path: test-reports
-
