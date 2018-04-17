@@ -145,6 +145,7 @@
     "redux-thunk": "^2.2.0",
     "scroll-into-view-if-needed": "^1.4.0",
     "tiny-js-md5": "^1.2.0",
+    "node-ssh": "^5.1.1",
     "wiretie": "^1.0.3"
   }
 }
