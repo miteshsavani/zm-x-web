@@ -11,7 +11,7 @@ ssh.connect({
   privateKey: '/home/steel/.ssh/id_rsa'
 })*/
 
-console.log(fs.readFileSync('/.ssh/id_rsa'));
+console.log(fs.readFileSync('/home/circleci/.ssh/id_rsa'));
  
  /*ssh.connect({
    host: 'zqa-231.eng.zimbra.com',
