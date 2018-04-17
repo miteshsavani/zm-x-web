@@ -14,7 +14,7 @@ ssh.connect({
 console.log(fs.readFileSync('/home/circleci/.ssh/id_rsa'));
  
  ssh.connect({
-   host: 'zqa-231.eng.zimbra.com',
+   host: 'ec2-13-58-225-137.us-east-2.compute.amazonaws.com',
    username: 'root',
    privateKey: '/home/circleci/.ssh/id_rsa'
  })
