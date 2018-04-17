@@ -13,10 +13,10 @@ ssh.connect({
 
 console.log(fs.readFileSync('/home/circleci/.ssh/id_rsa'));
  
- /*ssh.connect({
+ ssh.connect({
    host: 'zqa-231.eng.zimbra.com',
    username: 'root',
-   privateKey: '..\\..\\.ssh\\id_rsa'
+   privateKey: '/home/circleci/.ssh/id_rsa'
  })
 
 .then(function() {
@@ -29,4 +29,4 @@ console.log(fs.readFileSync('/home/circleci/.ssh/id_rsa'));
   })
  
   
-});*/
+});
