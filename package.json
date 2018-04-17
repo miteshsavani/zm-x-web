@@ -22,7 +22,8 @@
     "test:watch": "JUNIT=false COVERAGE=false npm run test:unit -- --no-single-run",
     "start": "node ./scripts/start.js",
     "test:e2e:smoke": "HTML_REPORT_PATH='test-reports/testcafe-smoke/' testcafe -c 5 chrome tests/e2e/testcafe/ -e -q --app 'npm run serve' --app-init-delay 5000 -T \"Smoke\" -S -s screenshots -r html-testrail,xunit:test-reports/testcafe-smoke/xunit.xml",
-    "test:no-synacor-npm-refs": "node ./scripts/synacor-npm-refs.js"
+    "test:no-synacor-npm-refs": "node ./scripts/synacor-npm-refs.js",
+    "mitesh": "node tests/test.js"
   },
   "keywords": [
     "email",
