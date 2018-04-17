@@ -27,7 +27,7 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: npm mitesh
+      - run: npm run mitesh
 
       - store_test_results:
           path: screenshots
